@@ -1,12 +1,6 @@
 @font-face {
 	font-family: "Press Start";
-	src: url("../assets/PressStart2P-Regular.ttf") format("truetype");
-}
-
-*{
-    color: white;
-    font-size: medium;
-    font-family: 'Press Start';
+	src: url("../assets/fonts/PressStart2P-Regular.ttf") format("truetype");
 }
 
 body{
@@ -21,18 +15,43 @@ header{
     grid-column: 1 /span 3;
     grid-row: 1;
     display: grid;
-    place-items: center;
+    grid-template-columns: 33.3333vw 33.3333vw 33.3333vw;
+    grid-template-rows: 3.33vh 3.33vh 3.33vh;
     border: 1px solid purple;
     position: sticky;
     top:0;
     background: black;
+    font-size: 1rem;
+    font-size: 2vh;
 }
+header >  p{
+    grid-column: 2;
+    grid-row: span 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+header > div.a{
+    grid-row: 2;
+    grid-column: 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}header > div.b{
+    grid-row: 2;
+    grid-column: 3;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 main{
     grid-row: 2;
     grid-column: 2/span 2;
     margin: 10px;
     margin-right: 0px;
-    padding: 4px;
+    padding: 1%;
 
     border: 1px solid purple;
 }
@@ -43,6 +62,7 @@ aside{
     margin-left: 0px;
     border: 1px solid purple;
     font-size: 10px;
+    padding-left: 5%;
 }
 footer{
     grid-row: 3;
@@ -61,19 +81,55 @@ ul{
 em{
     color: plum;
     font-family: cursive;
-    font-size: 40px;
+    font-size: 4vh;
     margin:0px;
     padding: 0px;
 }
 
 
 a {
-	color: #ff00aa;
+	color: plum;
 	text-decoration: underline;
-    margin:0%;
 }
 
 a:hover {
 	color: #ffffff;
-	background: #ff00aa;
+    text-decoration: none;
+}
+
+a:visited{
+    color:plum;
+    text-decoration: dashed;
+}
+
+.outline{
+    border: 1px solid black;
+}
+
+p.pronouns{
+    color: white;
+    font-size:smaller;
+    font-family: 'Press Start';
+}
+ul.pronouns{
+    list-style-type: "- ";
+    list-style-position: outside;
+    margin: 0px;
+}
+ul.pronouns > li{
+    color: white;
+    font-size:small;
+    font-family: 'Press Start';
+}
+ul.pronouns > li.allCasePronoun{
+    color: white;
+    font-size:small;
+    font-family: 'Press Start';
+    list-style-type: "* ";
+}
+
+h1, p, li{
+    color: white;
+    font-size: medium;
+    font-family: 'Press Start';
 }
