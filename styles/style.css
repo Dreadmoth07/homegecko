@@ -1,0 +1,79 @@
+@font-face {
+	font-family: "Press Start";
+	src: url("../assets/PressStart2P-Regular.ttf") format("truetype");
+}
+
+*{
+    color: white;
+    font-size: medium;
+    font-family: 'Press Start';
+}
+
+body{
+    background: linear-gradient(to top, rgb(118, 55, 118),transparent 80%) grey;
+    display: grid;
+    grid-template-columns: 20vw 40vw 40vw;
+    grid-template-rows: 10vh 80vh 10vh;
+    margin: 0px;
+    overflow-x: hidden;
+}
+header{
+    grid-column: 1 /span 3;
+    grid-row: 1;
+    display: grid;
+    place-items: center;
+    border: 1px solid purple;
+    position: sticky;
+    top:0;
+    background: black;
+}
+main{
+    grid-row: 2;
+    grid-column: 2/span 2;
+    margin: 10px;
+    margin-right: 0px;
+    padding: 4px;
+
+    border: 1px solid purple;
+}
+aside{
+    grid-row: 2;
+    grid-column: 1;
+    margin: 10px;
+    margin-left: 0px;
+    border: 1px solid purple;
+    font-size: 10px;
+}
+footer{
+    grid-row: 3;
+    grid-column: 1 /span 3;
+    display: grid;
+    place-items: center;
+    border: 1px solid plum;
+}
+
+ul{
+    list-style-type: "> ";
+    list-style-position: outside;
+    margin: 0px;
+}
+
+em{
+    color: plum;
+    font-family: cursive;
+    font-size: 40px;
+    margin:0px;
+    padding: 0px;
+}
+
+
+a {
+	color: #ff00aa;
+	text-decoration: underline;
+    margin:0%;
+}
+
+a:hover {
+	color: #ffffff;
+	background: #ff00aa;
+}

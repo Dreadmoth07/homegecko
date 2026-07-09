@@ -1,0 +1,354 @@
+@font-face {
+	font-family: "VCR";
+	src: url("../assets/fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
+}
+
+/* global */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "VCR", monospace;
+	font-size: 14px;
+	color: #ffffff;
+
+	background:
+		linear-gradient(rgba(255,0,140,0.02) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(180,0,255,0.02) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+		#120610;
+
+	background-size:
+		4px 4px,
+		4px 4px,
+		100% 100%,
+		auto;
+
+	image-rendering: pixelated;
+	overflow: hidden;
+}
+
+/* fake crt lines */
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 99999;
+
+	background:
+		repeating-linear-gradient(
+			to bottom,
+			rgba(255,255,255,0.03) 0px,
+			rgba(255,255,255,0.03) 1px,
+			rgba(0,0,0,0.12) 2px,
+			rgba(0,0,0,0.12) 3px
+		);
+}
+
+/*layout*/
+
+.layout {
+	display: flex;
+	min-height: 100vh;
+	padding: 18px;
+	gap: 18px;
+}
+
+.main {
+	flex: 1;
+	position: relative;
+}
+
+/* ----------------------*/
+/* windows */ 
+/* ----------------------*/
+
+.box,
+.window,
+.sidebar-window {
+	position: absolute;
+
+	background: #000000;
+	color: #ffffff;
+
+	border: 2px solid #ffffff;
+	outline: 1px solid #555;
+
+	box-shadow:
+		0 0 0 1px #000,
+		0 0 14px rgba(255,0,150,0.12);
+}
+
+/* main center window */
+.box {
+	width: 760px;
+	max-width: 90vw;
+	top: 80px;
+	left: 320px;
+}
+
+/* side windows */
+.window,
+.sidebar-window {
+	width: 290px;
+	top: 30px;
+	left: 20px;
+}
+
+/* extra */
+#extraWindow {
+	width: 320px;
+	left: 950px;
+	top: 140px;
+}
+
+#loserWindow {
+	width: 360px;
+	left: 1100px;
+	top: 360px;
+}
+
+/* titlebar */ /* s */
+
+.titlebar {
+	height: 28px;
+
+	background:
+		linear-gradient(to right, #111111, #2a2a2a);
+
+	color: #ffffff;
+
+	border-bottom: 1px solid #ffffff;
+
+	display: flex;
+	align-items: center;
+
+	padding: 0 10px;
+
+	font-weight: bold;
+	letter-spacing: 1px;
+	cursor: move;
+	user-select: none;
+	text-transform: uppercase;
+}
+
+.titlebar::before {
+	content: ">>";
+	color: #ff00a8;
+	margin-right: 8px;
+}
+
+.titlebar::after {
+	content: "<<";
+	color: #ff00a8;
+	margin-left: 8px;
+}
+
+/* cont end */
+
+.window-content,
+.sidebar-content {
+	padding: 14px;
+	background: #000000;
+}
+
+.box h1,
+.box p,
+.box img,
+.box button {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.box h1 {
+	font-size: 30px;
+	margin-top: 16px;
+	margin-bottom: 14px;
+	color: #ffffff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.box p {
+	line-height: 1;
+	color: #dddddd;
+	margin-bottom: 12px;
+}
+
+/* links & buttons */
+
+a {
+	color: #ff00aa;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #ffffff;
+	background: #ff00aa;
+}
+
+.icon,
+button {
+	font-family: inherit;
+	font-size: 14px;
+
+	background: #050505;
+	color: #ff00aa;
+
+	border: 1px solid #ffffff;
+	outline: 1px solid #222;
+
+	padding: 6px 10px;
+
+	text-decoration: none;
+	cursor: pointer;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	min-height: 28px;
+}
+
+.icon {
+	width: 100%;
+	margin-bottom: 6px;
+	justify-content: flex-start;
+}
+
+.icon::before {
+	content: ">";
+	margin-right: 8px;
+	color: #ffffff;
+}
+
+.icon:hover,
+button:hover {
+	background: #ff00aa;
+	color: #000000;
+}
+
+.icon:active,
+button:active {
+	transform: translateY(1px);
+}
+
+/* sidebar */
+
+.sidebar-content {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.webchains {
+	padding-top: 8px;
+	padding-left: 10px;
+	padding-bottom: 8px;
+	border-top: 1px solid #333;
+	margin-top: 8px;
+}
+
+/* taskbar */
+
+.taskbar {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 34px;
+
+	background: #000000;
+	border-top: 2px solid #ffffff;
+
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+
+	color: #ff00aa;
+	z-index: 9999;
+}
+
+.taskbar::before {
+	content: "[ system online ]";
+}
+
+/* totem */
+
+.totem {
+	width: 170px;
+	cursor: pointer;
+
+	transform-style: preserve-3d;
+	animation: spin 5s linear infinite;
+
+	filter:
+		drop-shadow(0 0 10px rgba(255,0,170,0.5))
+		drop-shadow(0 0 20px rgba(255,255,255,0.15));
+}
+
+@keyframes spin {
+	0% {
+		transform:
+			perspective(700px)
+			rotateX(0deg)
+			rotateY(0deg)
+			rotateZ(0deg);
+	}
+	100% {
+		transform:
+			perspective(700px)
+			rotateX(360deg)
+			rotateY(360deg)
+			rotateZ(360deg);
+	}
+}
+
+/* trail */
+
+.trail {
+	position: fixed;
+	width: 18px;
+	height: 10px;
+	pointer-events: none;
+	z-index: 999999;
+
+	animation: fadeOut 0.8s linear forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.4);
+	}
+}
+
+/* canvas */
+
+canvas {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+}
+
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ff00aa;
+	border: 1px solid #fff;
+}
