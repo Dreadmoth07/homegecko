@@ -3,101 +3,245 @@
 	src: url("../assets/fonts/PressStart2P-Regular.ttf") format("truetype");
 }
 
-p{
-    color: white;
-    font-size: medium;
-    font-family: 'Press Start';
-}
-p.small{
-    color: white;
-    font-size:smaller;
-    font-family: 'Press Start';
-}
-h1{
-    color: white;
-    font-size: large;
-    font-family: 'Press Start';
-    text-decoration: solid paleturquoise underline;
-}
+/*large layout*/
+@media (min-width:700px){
 
-body{
-    background: linear-gradient(to top, rgb(118, 55, 118),transparent 80%) grey;
-    display: grid;
-    grid-template-columns: 20vw 40vw 40vw;
-    grid-template-rows: 10vh 80vh 10vh;
-    margin: 0px;
-    overflow-x: hidden;
-}
-header{
-    grid-column: 1 /span 3;
-    grid-row: 1;
-    display: grid;
-    grid-template-columns: 33.3333vw 33.3333vw 33.3333vw;
-    grid-template-rows: 3.33vh 3.33vh 3.33vh;
-    border: 1px solid purple;
-    position: sticky;
-    top:0;
-    background: black;
-    font-size: 1rem;
-    font-size: 2vh;
-}
-header >  p{
-    grid-column: 2;
-    grid-row: span 1;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-header > div.a{
-    grid-row: 2;
-    grid-column: 1;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}header > div.b{
-    grid-row: 2;
-    grid-column: 3;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
+    p{
+        color: white;
+        font-size: 80%;
+        font-family: 'Press Start';
+    }
+    p.small{
+        color: white;
+        font-size:60%;
+        font-family: 'Press Start';
+    }
+    h1{
+        color: white;
+        font-size: 90%;
+        font-family: 'Press Start';
+        text-decoration: solid paleturquoise underline;
+    }
 
-main{
-    grid-row: 2;
-    grid-column: 2/span 2;
-    margin: 10px;
-    margin-right: 0px;
-    padding: 1%;
+    body{
+        background: 
+            linear-gradient(to top, rgb(118, 55, 118), transparent 80%), 
+            linear-gradient(to top right, plum 50%, transparent, purple, transparent),
+            linear-gradient(to top, blue 10%,transparent, darkolivegreen 80%);
+        display: grid;
+        grid-template-columns: 20vw 40vw 40vw;
+        grid-template-rows: 10vh 80vh 10vh;
+        margin: 0px;
+        overflow: hidden;
+    }
+    main{
+        grid-row: 2;
+        grid-column: 2/span 2;
+        margin: 10px;
+        margin-right: 0px;
+        padding: 1%;
 
-    border: 1px solid purple;
-}
-aside{
-    grid-row: 2;
-    grid-column: 1;
-    margin: 10px;
-    margin-left: 0px;
-    border: 1px solid purple;
-    font-size: 10px;
-    padding-left: 5%;
-}
-footer{
-    grid-row: 3;
-    grid-column: 1 /span 3;
-    display: grid;
-    place-items: center;
-    border: 1px solid plum;
-}
+        border: 1px solid purple;
+    }
+    aside{
+        grid-row: 2;
+        grid-column: 1;
+        margin: 10px;
+        margin-left: 0px;
+        border: 1px solid purple;
+        font-size: 10px;
+        padding-left: 5%;
+    }
+    footer{
+        grid-row: 3;
+        grid-column: 1 /span 3;
+        display: grid;
+        place-items: center;
+        border: 1px solid plum;
+    }
 
-ul{
-    list-style-type: "> ";
+    header{
+        grid-column: 1 /span 3;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 33.3333vw 33.3333vw 33.3333vw;
+        grid-template-rows: 3.33vh 3.33vh 3.33vh;
+        border: 1px solid purple;
+        position: sticky;
+        top:0;
+        background: black;
+        font-size: 1rem;
+        font-size: 2vh;
+    }
+    header >  p{
+        grid-column: 2;
+        grid-row: span 1;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header > div.a{
+        grid-row: 2;
+        grid-column: 1;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header > div.b{
+        grid-row: 2;
+        grid-column: 3;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a.friend31x88{
+        width: 40%;
+    }
+    ul{
+        list-style-type: "> ";
+        list-style-position: outside;
+        margin: 0px;
+    }
+    li{
+        color: white;
+        font-size: 60%;
+        font-family: 'Press Start';
+    }
+    ul.pronouns{
+    list-style-type: "- ";
     list-style-position: outside;
     margin: 0px;
+    }
+    ul.pronouns > li{
+        color: white;
+        font-size:small;
+        font-family: 'Press Start';
+    }
+    ul.pronouns > li.allCasePronoun{
+        color: white;
+        font-size:small;
+        font-family: 'Press Start';
+        list-style-type: "* ";
+    }
 }
-li{
-    color: white;
-    font-size: small;
-    font-family: 'Press Start';
+/*Small layout*/
+@media (max-width:700px){
 
+    p{
+        color: white;
+        font-size: 60%;
+        font-family: 'Press Start';
+    }
+    p.small{
+        color: white;
+        font-size:50%;
+        font-family: 'Press Start';
+    }
+    h1{
+        color: white;
+        font-size: 70%;
+        font-family: 'Press Start';
+        text-decoration: solid paleturquoise underline;
+    }
+
+    body{
+        background: linear-gradient(to top, rgb(118, 55, 118), transparent 80%), 
+            linear-gradient(to top right, plum 50%, transparent, purple, transparent),
+            linear-gradient(to top, blue 10%,transparent, darkolivegreen 80%);
+        display: grid;
+        grid-template-columns: 20vw 40vw 40vw;
+        grid-template-rows: 10vh 70vh 20vh;
+        margin: 0px;
+        overflow: hidden;
+    }
+    main{
+        grid-row: 2;
+        grid-column: 1/span 3;
+        margin: 10px;
+        margin-right: 0px;
+        padding: 1%;
+        font-size: 100%;
+        border: 1px solid purple;
+    }
+    aside{
+        grid-row: 3;
+        grid-column: 1/ span 2;
+        margin: 10px;
+        margin-left: 0px;
+        border: 1px solid purple;
+        font-size: 10px;
+        padding-left: 5%;
+    }
+    footer{
+        grid-row: 3;
+        grid-column: 3;
+        display: grid;
+        place-items: center;
+        border: 1px solid plum;
+    }
+
+    header{
+        grid-column: 1 /span 3;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: 3.33vh 3.33vh 3.33vh;
+        border: 1px solid purple;
+        background: black;
+        font-size: 1rem;
+        font-size: 2vh;
+    }
+    header >  p{
+        grid-column: 1;
+        grid-row: span 1;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header > div.a{
+        grid-row: 1;
+        grid-column: 2;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header > div.b{
+        grid-row: 3;
+        grid-column: 2;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    a.friend31x88{
+        width: 1%;
+    }
+    ul.pronouns{
+    list-style-type: "- ";
+    list-style-position: outside;
+    margin: 0px;
+    }
+    ul.pronouns > li{
+        color: white;
+        font-size:20%;
+        font-family: 'Press Start';
+    }
+    ul.pronouns > li.allCasePronoun{
+        color: white;
+        font-size:1%;
+        font-family: 'Press Start';
+        list-style-type: "* ";
+    }
+    ul{
+        list-style-type: "> ";
+        list-style-position: outside;
+        margin: 0px;
+    }
+    li{
+        color: white;
+        font-size: 50%;
+        font-family: 'Press Start';
+    }
 }
 
 em{
