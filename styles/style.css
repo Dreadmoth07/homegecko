@@ -31,6 +31,16 @@ h2{
     text-decoration: underline;
 }
 
+ul{
+    list-style-type: "> " ;
+}
+ul.pronouns{
+    list-style-type: "- ";
+}
+li.allCasePronoun{
+    list-style-type: "* ";
+}
+
 ._31x88, ._31x88 > *{
     height: 100%;
     width: 100%;
