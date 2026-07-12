@@ -41,10 +41,18 @@ li.allCasePronoun{
     list-style-type: "* ";
 }
 
-._31x88, ._31x88 > *{
+._31x88, ._31x88 > img{
     height: 100%;
     width: 100%;
 }
+a._31x88{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: x-small;
+    text-decoration: dashed underline;
+}
+
 .center{
     display: flex;
     justify-content: center;
