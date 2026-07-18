@@ -34,8 +34,12 @@ h2{
 ul{
     list-style-type: "> " ;
 }
+
 ul.pronouns{
     list-style-type: "- ";
+}
+li{
+    margin-bottom: 1px;
 }
 li.allCasePronoun{
     list-style-type: "* ";
